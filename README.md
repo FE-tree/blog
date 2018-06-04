@@ -1,2 +1,3 @@
 # blog
-blog， a collection of choice specimens
+blog aggregation
+a collection of choice specimens
