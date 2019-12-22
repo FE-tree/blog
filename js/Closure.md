@@ -1,5 +1,5 @@
 闭包好处：避免命名冲突（全局变量污染）
-```
+```javascript
 (function(a, b) {
     console.log(a+b);  //30
 })(10, 20);
@@ -7,13 +7,13 @@
 
 
 自执行匿名函数
-```
+```javascript
 (function() { return 1 }) ();
 (function(x) { return x * x }) (3);
 ```
 
 封装私有变量
-```
+```javascript
 function counter(init) {
     var x = init || 0;
     return {
@@ -30,7 +30,7 @@ c.inc(); // 13
 ```
 
 把多参数的函数变成单参数的函数
-```
+```javascript
 function make_pow(n) {
     return function (x) {
         return Math.pow(x, n);
@@ -45,7 +45,7 @@ console.log(pow3(7)); // 7的3次方 -- 343
 ```
 
 > 闭包
-```
+```javascript
 var fn = (function() {
 	var text = 'text';
 	return {
@@ -65,7 +65,7 @@ fn.getText();
 ```
 
 > JavaScript利用闭包实现模块化
-```
+```javascript
 var foo = (function CoolModule() {
     var something = "cool";
     var another = [1, 2, 3];
@@ -86,7 +86,7 @@ foo.doAnother(); // 1 ! 2 ! 3
 ```
 
 > 闭包 - 事件委派
-```
+```javascript
 //利用事件委派可以写出更加优雅的  
     (function(){    
         var resources = document.getElementById('resources');    
@@ -102,7 +102,7 @@ foo.doAnother(); // 1 ! 2 ! 3
     })();  
 ```
 
-```
+```javascript
 // 惰性载入单例
 var LazySingle = (function(){
     // 单例实例引用
@@ -127,7 +127,7 @@ var LazySingle = (function(){
 })();
 ```
 
-```
+```javascript
 // 实现1： 最简单的对象字面量
 var singleton = {
         attr : 1,

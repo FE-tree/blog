@@ -1,6 +1,6 @@
 
 ### 镇楼函数
-```
+``````javascript
 window.onload = function() {
 	setTimeout(function() {
 		console.log(1);
@@ -46,7 +46,7 @@ console.log('script end');
 ```
 
 #### 字符串数组互相转化
-```
+```javascript
 // 数组转字符串
 // 需要将数组元素用某个字符连接成字符串，示例代码如下：
 var a, b;
@@ -60,7 +60,7 @@ console.log(s.split(','));
 
 #### map
 map()方法定义在JavaScript的Array中，我们调用Array的map()方法，传入我们自己的函数，就得到了一个新的Array作为结果
-```
+```javascript
 var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 var results = arr.map(pow); // [1, 4, 9, 16, 25, 36, 49, 64, 81]
 console.log(results);
@@ -74,7 +74,7 @@ var squares = [1,2,3,4].map(function (val) {
 
 #### filter
 Array的filter()也接收一个函数。和map()不同的是，filter()把传入的函数依次作用于每个元素，然后根据返回值是true还是false决定保留还是丢弃该元素
-```
+```javascript
 var arr = [1, 2, 4, 5, 6, 9, 10, 15];
 var r = arr.filter(function (x) {
     return x % 2 !== 0;
@@ -84,7 +84,7 @@ r; // [1, 5, 9, 15]
 
 #### sort
 根据ASCII码进行排序,并且会把元素都转换为String再进行排序
-```
+```javascript
 // 正序
 var arr = [10, 20, 1, 2];
 arr.sort(function (x, y) {
@@ -119,7 +119,7 @@ a1 === a2; // true, a1和a2是同一对象
 ```
 
 #### 差集
-```
+```javascript
 const minst = function minst(a, b) {
     // 把a数组转化成object
     const hash = {};
@@ -147,7 +147,7 @@ const minst = function minst(a, b) {
 
 
 #### localStorage的封装
-```
+```javascript
 //在get时，如果是JSON格式，那么将其转换为JSON，而不是字符串。以下是基础代码：
 var Store = {
     get: function(key) {
@@ -178,7 +178,7 @@ var Store = {
     }
 }
 ```
-```
+```javascript
 在此基础之上，可以扩展很多方法，比如批量保存或删除一些数据：
 // 批量保存，data是一个字典
 Store.setList = function(data) {
@@ -196,7 +196,7 @@ Store.removeList = function(list) {
 ```
 
 #### 深度拷贝对象
-```
+```javascript
 function cloneObj(obj) {
     var o = obj.constructor == Object ? new obj.constructor() : new obj.constructor(obj.valueOf());
     for(var key in obj){
@@ -213,7 +213,7 @@ function cloneObj(obj) {
 ```
 
 #### 合并对象
-```
+```javascript
 // 通过...延展操作符可以很容易的合并对象
 
 const person = { a:1 };
@@ -227,40 +227,40 @@ const summary = {...person, ...tools, ...attributes};
 ```
 
 ##### 过滤空值
-```
+```javascript
 let res = [1,2,0,undefined,null,false,''].filter(Boolean);
 >> 1,2
 
 ```
 
 ##### Array.fill
-```
+```javascript
 Array(10).fill('naive').map((v, i) =>{ return {number: i}});
 ```
 
 ##### Array.from
-```
+```javascript
 Array.from(new Array(10), (v,i) => {
     return {number: i}
 });
 ```
 
 ##### 递归
-```
+```javascript
 (function wallace (i) { 
     return (i < 0) ? [] : wallace(i - 1).concat({number: i}); 
 })(10);
 ```
 
 ##### 尾递归
-```
+```javascript
 (function mistake (i, acc) {
     return (i < 10) ? mistake(i + 1, acc.concat({number: i})) : acc; 
 })(0, []);
 ```
 
 ##### Generator
-```
+```javascript
 function* angry(i) {
   yield {number: i};
   if (i < 10) { yield* angry(i + 1); }
@@ -269,12 +269,12 @@ Array.from(angry(0));
 ```
 
 ##### apply方式
-```
+```javascript
 Array.apply(null, { length: 10 }).map((v, i) => i);
 ```
 
 ##### JS生成随机字符串
-```
+```javascript
 var random_str = function() {
     var len = 32;
     var chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
@@ -290,7 +290,7 @@ var random_str = function() {
 ```
 
 ##### 生成随机数
-```
+```javascript
 function randombetween(min, max){
     return min + (Math.random() * (max-min +1));
 }
@@ -306,7 +306,7 @@ function randombetween(min, max){
 
 
 #### 封装
-```
+```javascript
 function Person (name,age,sex){
     this.name = name;
     this.age = age;

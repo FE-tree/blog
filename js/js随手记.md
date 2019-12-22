@@ -1,4 +1,4 @@
-```
+```javascript
 // 有关Promise的异步执行问题
 new Promise(resolve => {
     resolve(1);
@@ -9,7 +9,7 @@ console.log(3);
 ```
 
 > 使用逻辑或命名
-```
+```javascript
 var arg1 = "";
 arg1 = arg1 || 10;
 alert(txt ? txt : "hehe");
@@ -20,7 +20,7 @@ alert(txt || "hehe");
 // undefined则为未定义的
 ```
 
-```
+```javascript
 // 原始值: 存取直接作用于它自身。例如string，number，boolean，null，undefined
 var foo =1; 
 var bar = foo;
@@ -33,7 +33,7 @@ bar[0] =9;
 console.log(foo[0], bar[0]); // => 9, 9
 ```
 
-```
+```javascript
 // 用typeof检测数据类型
 var fn = function(n){
   console.log(n);
@@ -67,7 +67,7 @@ console.log(o instanceof Array);//  false
 ```
 
 > JavaScript 获取当前时间戳：
-```
+```javascript
 // 第一种方法：
 var timestamp = Date.parse(new Date());
 // 结果：1280977330000
@@ -85,7 +85,7 @@ var timestamp=new Date().getTime()；
 > 页面传值的中文乱码可以用escape()编码解决
 
 
-```
+```javascript
 history.back(-1); // 直接返回当前页的上一页，数据全部消息，是个新页面
 history.go(-1); // 也是返回当前页的上一页，不过表单里的数据全部还在
 history.back(0); // 刷新 
@@ -95,7 +95,7 @@ window.location.reload() // 刷新
 ```
 
 > console
-```
+```javascript
 console.log()
 console.info()
 console.warn()
@@ -103,7 +103,7 @@ console.error()
 ```
 
 字符串截取
-```
+```javascript
 // 提取字符串中介于两个指定下标之间的字符
 string.substring(0,1)
 // 提取从指定位置开始的指定长度的子字符串
@@ -111,19 +111,19 @@ string.substr(0,1)
 ```
 
 保存小数点后n位数
-```
+```javascript
 number.toFixed(n);
 ```
 
 使用length属性清空或截断数组
-```
+```javascript
 var myArray = [12, 222, 1000, 124, 98, 10]; 
 myArray.length = 0;
 myArray.length = 4;
 ```
 
 获取指定范围内的随机数
-```
+```javascript
 // 直接获取
 var x = Math.floor(Math.random() * (max - min + 1)) + min;
 // 传入随机数最小值和最大值
@@ -133,7 +133,7 @@ random: function(min, max) {
 ```
 
 数组去重（indexOf版）
-```
+```javascript
 function unique(array){
 	var n = []; 
 	for(var i = 0; i < array.length; i++) { 
@@ -161,7 +161,7 @@ for(var i = 1; i < addr.addrArr.length; i++){
 ```
 
 ['1','2','3'].map(parseInt)
-```
+```javascript
 var arr = ['1','2','3'];
 console.log(arr.map(parseInt));
 console.log(arr.map(function(string, radix, others) {
@@ -174,7 +174,7 @@ console.log(arr.map(function(string, radix, others) {
 ```
 
 千分符间隔（正则版）
-```
+```javascript
 function toThousands(num) {
     return (num || 0).toString().replace(/(\d)(?=(?:\d{3})+$)/g, '$1,');
 }
@@ -187,7 +187,7 @@ function format(number) {
 ```
 
 时间戳格式化
-```
+```javascript
 function formatDate(timeStamp) {    
     var date = new Date(timeStamp);
     var y = date.getFullYear();    
@@ -206,7 +206,7 @@ function formatDate(timeStamp) {
 ```
 
 > 添加script Tag，动态添加JS
-```
+```javascript
 <script>
     window.load_page = function (path) {
         var staticPath = "..." //动态设置的static path
@@ -217,7 +217,7 @@ function formatDate(timeStamp) {
 </script>
 ```
 
-```
+```javascript
 // 监听页面关闭事件
 window.onbeforeunload = function (e) {
     e = e || window.event;
@@ -236,7 +236,7 @@ window.onunloadcancel = function() {
 }
 ```
 
-```
+```javascript
 retrun true;    // 返回正确的处理结果。
 return false;   // 分会错误的处理结果，终止处理。
 return;         // 把控制权返回给页面。
@@ -252,7 +252,7 @@ return;         // 把控制权返回给页面。
     - encodeURI 用于对整个URL进行编码
     - encodeURIComponent 用于对URL的组成部分进行个别编码
  - 相应3个解码函数：`unescape,decodeURI,decodeURIComponent `
- 
+
 1. escape不编码字符有69个：*，+，-，.，/，@，_，0-9，a-z，A-Z
 2. encodeURI不编码字符有82个：!，#，$，&，'，(，)，*，+，,，-，.，/，:，;，=，?，@，_，~，0-9，a-z，A-Z
 3. encodeURIComponent不编码字符有71个：!， '，(，)，*，-，.，_，~，0-9，a-z，A-Z
